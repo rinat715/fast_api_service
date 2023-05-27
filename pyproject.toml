@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "service_permutations_process"
+version = "0.1.0"
+description = ""
+authors = ["Rinat Shaihetdinov <rinat.shaihetdinov@simbirsoft.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "service_permutations_process"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.95.2"
+uvicorn = {extras = ["standard"], version = "^0.22.0"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
