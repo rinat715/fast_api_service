@@ -21,7 +21,6 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 
-
 class ListRequeredErrorException(Exception):
     def __init__(self, name: str):
         self.name = name

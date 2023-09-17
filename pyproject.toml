@@ -1,3 +1,13 @@
+[project]
+name = "service_permutations_rust"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+
 [tool.poetry]
 name = "service_permutations_process"
 version = "0.1.0"
@@ -13,6 +23,15 @@ fastapi = "^0.95.2"
 uvicorn = {extras = ["standard"], version = "^0.22.0"}
 
 
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.270"
+maturin = "^1.0.1"
+
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+
+
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
