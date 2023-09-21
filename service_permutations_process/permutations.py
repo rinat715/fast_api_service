@@ -1,7 +1,7 @@
-from typing import List, Any
+from typing import Iterable, List, Any
 from itertools import permutations as itertools_permutations
 
-ARGS_LENGTH = 5
+ARGS_LENGTH = 10
 
 
 class CustomErr(Exception):
@@ -14,8 +14,7 @@ class ArgsTooLong(CustomErr):
         super().__init__(message)
 
 
-
-def permutations(args: List[Any]) -> List[List[Any]]:
+def permutations(args: List[Any]) -> List[Iterable[Any]]:
     if len(args) > ARGS_LENGTH:
         raise ArgsTooLong(args)
     perm = itertools_permutations(args)
